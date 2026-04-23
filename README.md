@@ -5,7 +5,7 @@ Con las funciones basicas de un portal de compra-venta juegos.
 
 # ¿Cómo será?
 
-Este proyecto sería una base de datos de juegos, los usuarios podrán seleccionar y comprar el juego que desseen,
+Este proyecto sería una base de datos de juegos, los usuarios podrán seleccionar y comprar el juego que deseen,
 es evidente que los usuarios estarán almacenados en la base de datos. 
 
 Los usuarios tendrán una cartera y un carrito para almacenar los juegos que van a comprar como el dinero que hay en la cuenta.
