@@ -2,11 +2,11 @@ package prog.ud8.proyecto;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Proyecto {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Map<String, Integer> juegos = new HashMap<>();
 		
 		juegos.put("minecraft", 1);
@@ -16,7 +16,12 @@ public class Proyecto {
 		juegos.put("resident evil 8", 5);
 		juegos.put("subnautica", 6);
 		
-		System.out.println(juegos);
+		Set<String> claves = juegos.keySet();
+		
+		for (String n : claves) {
+			System.out.println(juegos.get(n));
+			
+		}
 	}
 
 }
