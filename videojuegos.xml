@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<juegos>
+    <juego>
+        <nombre>Minecraft</nombre>
+        <empresa>Mojang</empresa>
+        <Precio>90</Precio>
+        <Anio>1990</valor2>
+        <Valoracion>2</Valoracion>
+    </juego>
+    <juego>
+        <nombre>Gta7</nombre>
+        <empresa>Rockstar Games</empresa>
+        <Precio>190</Precio>
+        <Anio>1290</valor2>
+        <Valoracion>6</Valoracion>
+    </juego>
+    <juego>
+        <nombre>Red Dead Redeptiom</nombre>
+        <empresa>BenaocazSL</empresa>
+        <Precio>10</Precio>
+        <Anio>280</Anio>
+        <Valoracion>5</Valoracion>
+    </juego>
+    <juego>
+        <nombre>csgo</nombre>
+        <empresa>Vale</empresa>
+        <Precio>0</Precio>
+        <Anio>3</Anio>
+        <Valoracion>0</valor3>
+    </juego>
+    <juego>
+        <nombre>Resident Evil 8</nombre>
+        <empresa>Mr.LinuxFC</empresa>
+        <Precio>8</Precio>
+        <Anio>8</Anio>
+        <Valoracion>8</Valoracion>
+    </juego>
+    <juego>
+        <nombre>Subnautica</nombre>
+        <empresa>AnaODOOPutesquiCPSSH</empresa>
+        <Precio>17</Precio>
+        <Anio>0</Anio>
+        <Valoracion>14</valor3>
+    </juego>
+</juegos>
