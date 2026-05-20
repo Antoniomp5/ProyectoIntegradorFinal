@@ -1,6 +1,4 @@
-package proyecto;
-
-package proyecto;
+package prog.ud8.proyecto;
 
 import java.io.File;
 import java.util.ArrayList;
