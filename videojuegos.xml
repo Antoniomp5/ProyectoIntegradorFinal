@@ -4,14 +4,14 @@
         <nombre>Minecraft</nombre>
         <empresa>Mojang</empresa>
         <Precio>90</Precio>
-        <Anio>1990</valor2>
+        <Anio>1990</Anio>
         <Valoracion>2</Valoracion>
     </juego>
     <juego>
         <nombre>Gta7</nombre>
         <empresa>Rockstar Games</empresa>
         <Precio>190</Precio>
-        <Anio>1290</valor2>
+        <Anio>1290</Anio>
         <Valoracion>6</Valoracion>
     </juego>
     <juego>
@@ -26,7 +26,7 @@
         <empresa>Vale</empresa>
         <Precio>0</Precio>
         <Anio>3</Anio>
-        <Valoracion>0</valor3>
+        <Valoracion>0</Valoracion>
     </juego>
     <juego>
         <nombre>Resident Evil 8</nombre>
@@ -40,6 +40,6 @@
         <empresa>AnaODOOPutesquiCPSSH</empresa>
         <Precio>17</Precio>
         <Anio>0</Anio>
-        <Valoracion>14</valor3>
+        <Valoracion>14</Valoracion>
     </juego>
 </juegos>
