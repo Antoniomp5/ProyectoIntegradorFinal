@@ -1,0 +1,39 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class ProyectoGUI extends Frame implements ActionListener {
+	private static final long serialVersionUID = 1L;
+	private static final LayoutManager FlowLayout() = null;
+	//Componentes de la Interfaz
+	private Label lblUsuario, lblJuegos, lblInfo;
+    private TextField txtUsuario;
+    private List listaVisualJuegos;
+    private Button btnSaludar, btnComprar, btnGuardarXml;
+    private TextArea txtDetalles;
+	
+    //Mapa de datos original
+    private Map<Integer, Juegos> mapaJuegos;
+    
+    public ProyectoGUI() {
+    	//Configurar Frame videojuegos
+    	setTitle("Tienda de videojuego");
+    	setSize(500, 400);
+    	setLayout(new FlowLayout());
+    	
+    // inicializar Juegos
+    	InicializarJuegos();
+    	
+    // crear label de usuario
+    	lblUsuario = new label
+    }
+    
+    @Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
