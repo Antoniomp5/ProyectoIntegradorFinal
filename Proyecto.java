@@ -1,59 +1,120 @@
-package prog.ud8.proyecto;
+package proyecto;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class Proyecto {
+	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		login();
+		opciones();
+		sc.close();
+	
+	}
+
+	public static void opciones() {
+
+		
+		System.out.println("-------------------------");
+		System.out.println("1.Mostrar juegos");
+		System.out.print("Respuesta: ");		
+		int respuesta = sc.nextInt();
+		if (respuesta == 1) {
+			mostrarjuegos();
+		} else {
+			opciones();
+		}
+		System.out.println("-------------------------");
+		
+		
+	}
+	
+	public static void login() {
+		
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("-----------------");
-		System.out.print("Nombre de usuario: ");
-		String usuario = sc.nextLine();
-		System.out.println("-----------------");
-		
-		System.out.println("bienvenido, " + usuario);
-		Juegos Minecraft = new Juegos("Minecraft", "Mojang", 90, 1990, 2);
-		Juegos gta7 = new Juegos("Gta7", "Rockstar Games", 190, 1290, 6);
-		Juegos RD = new Juegos("Red Dead Redeptiom ", "BenaocazSL", 10, 280, 5);
-		Juegos CSGO = new Juegos("csgo", "Vale", 0, 3, 0);
-		Juegos RE8 = new Juegos("Resident Evil 8", "Mr.LinuxFC", 8, 8, 8);
-		Juegos SUB = new Juegos("Subnautica", "AnaODOOPutesquiCPSSH", 17, 0, 14);
-		
-		Map<Integer, Juegos> juegos = new HashMap<>();
-		
-		System.out.println("-----------------");
-		System.out.println("Lista de juegos: ");
-		juegos.put(1, Minecraft);
-		juegos.put(2, gta7);
-		juegos.put(3, RD);
-		juegos.put(4, CSGO);
-		juegos.put(5, RE8);
-		juegos.put(6, SUB);
+		System.out.println("-----------Login--------");
+		System.out.print("Usuario: ");
+		sc.nextLine();
+		System.out.println("-------------------------");
 		
 		
-		Set<Integer> claves = juegos.keySet();
-		mostrarJuego(juegos);
-		
-		System.out.println("-----------------");
-		System.out.println("¿Quieres comprar un juego?");
-		System.out.print(":");
-		String respuesta = sc.nextLine();
-		respuesta.toLowerCase();
-		System.out.println("-----------------");
-		if (respuesta == "si") {
-			System.out.println("¿Que juego quieres comprar?");
-			String juego = sc.nextLine();
+	}
+	
+	public static void mostrarjuegos() {
+		try {
+
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+
+			Document documento = builder.parse("videojuegos.xml");
+
+			Element raiz = documento.getDocumentElement();
+
+			// Obtener TODOS los juegos
+			NodeList juegos = raiz.getElementsByTagName("juego");
+			
+			// Variables para la base de datos
+	        String titulo = "";
+	        String empresa = "";
+	        int precio = 0;
+	        int fecha = 0;
+	        int valoracion = 0;
+
+			// Recorrer cada juego
+			for (int i = 0; i < juegos.getLength(); i++) {
+
+				Node juego = juegos.item(i);
+
+				if (juego.getNodeType() == Node.ELEMENT_NODE) {
+
+					NodeList datos = juego.getChildNodes();
+
+					for (int j = 0; j < datos.getLength(); j++) {
+
+						Node dato = datos.item(j);
+
+						if (dato.getNodeType() == Node.ELEMENT_NODE) {
+
+							System.out.println(dato.getNodeName() + ": " + dato.getTextContent());
+							
+	                        switch (dato.getNodeName()) {
+                            case "titulo":
+                                titulo = dato.getTextContent();
+                                break;
+                            case "empresa":
+                                empresa = dato.getTextContent();
+                                break;
+                            case "precio":
+                                precio = Integer.parseInt(dato.getTextContent());
+                                break;
+                            case "fecha":
+                                fecha = Integer.parseInt(dato.getTextContent());
+                                break;
+                            case "valoracion":
+                                valoracion = Integer.parseInt(dato.getTextContent());
+                                break;
+	                        }
+						}
+					}
+
+					System.out.println("-------------------");
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Error " + e.getMessage());
 		}
 	}
 	
-	public static void mostrarJuego(Map<Integer, Juegos> j) {
-	    for (Integer n : j.keySet()) {
-	        System.out.println(n + " -> " + j.get(n));
-	    }
-	}
-	
 }
+
+
