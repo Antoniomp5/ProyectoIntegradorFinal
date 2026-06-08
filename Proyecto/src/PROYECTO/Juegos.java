@@ -1,17 +1,25 @@
 package PROYECTO;
 
+import javax.persistence.*;
+
+@Entity
 public class Juegos {
+
+    @Id
+    @GeneratedValue
+    private long id;
+
     private String titulo;
     private String empresa_creadora;
     private int precio;
     private int fecha_salida;
     private int valoracion;
 
-    // Constructor vacío (Obligatorio para serializar XML)
+    // Constructor vacío (OBLIGATORIO JPA)
     public Juegos() {}
 
-    // Tu constructor original
-    public Juegos(String titulo, String empresa_creadora, int precio, int fecha_salida, int valoracion) {
+    public Juegos(String titulo, String empresa_creadora, int precio,
+                  int fecha_salida, int valoracion) {
         this.titulo = titulo;
         this.empresa_creadora = empresa_creadora;
         this.precio = precio;
@@ -19,7 +27,8 @@ public class Juegos {
         this.valoracion = valoracion;
     }
 
-    public String getTitulo() { return titulo; }
+    // Getters y setters
+    public  String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
     public String getEmpresa_creadora() { return empresa_creadora; }
